@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Each from '../components/Each';
+import Each from './Each';
 
-const Home = function pagesHome({ nasdaq }) {
+const Home = function compHome({ nasdaq }) {
   const companies = nasdaq;
   companies.sort((a, b) => b.changesPercentage - a.changesPercentage);
   return (
     <>
-      <div className="full-width">
-        <h5 className="list-heading">Top Performers</h5>
-      </div>
       <div className="container">
         {companies.map((item, index) => (
           <div key={item.ticker} className="container-child">
